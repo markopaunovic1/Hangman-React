@@ -1,8 +1,11 @@
-
+import  './index.css'
 
 function App() {
   return (
-    <h1>Begining of hangman game</h1>
+    <main>
+      <h1>Begining of hangman game</h1>
+
+    </main>
   )
 }
 

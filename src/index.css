@@ -1,0 +1,22 @@
+/*
+Dark mode:
+Background: Dark Blue (#1e1e2e) 
+Word/Letters: Off-White (#f8f8f2) 
+Correct Guesses: Soft Green (#50fa7b) 
+Incorrect Guesses: Bright Red (#ff5555) 
+Hangman Drawing: Light Gray (#b0bec5) 
+Buttons/UI Elements: Electric Blue (#6272a4)
+
+Ligth mode:
+Background: Soft Beige (#fAf3e0)
+Word/Letters: Dark Gray (#333333)
+Correct Guesses: Green (#4caf50)
+Incorrect Guesses: Red (#e63946)
+Hangman Drawing: Dark Brown (#5d4037)
+Buttons/UI Elements: Blue (#1976d2)
+*/
+
+body {
+  background-color: #1e1e2e;
+  font-family: "Patrick Hand", cursive;
+}
