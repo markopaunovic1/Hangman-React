@@ -1,0 +1,8 @@
+section.information-text {
+  line-height: 40px;
+}
+
+p {
+  max-width: 350px;
+  color: #bdbdaf;
+}

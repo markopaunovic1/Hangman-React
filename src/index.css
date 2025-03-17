@@ -17,6 +17,20 @@ Buttons/UI Elements: Blue (#1976d2)
 */
 
 body {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
   background-color: #1e1e2e;
   font-family: "Patrick Hand", cursive;
+  color: #f8f8f2;
+}
+
+section.information-section {
+  text-align: center;
+  font-size: 34px;
+}
+
+section.information-section > p {
+  background-color: red;
 }
