@@ -30,7 +30,3 @@ section.information-section {
   text-align: center;
   font-size: 34px;
 }
-
-section.information-section > p {
-  background-color: red;
-}
