@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
+import "./index.css";
 
-function CurrentWord() {
-    return (
-        <h1>CurrentWord section</h1>
-    )
+function CurrentWord(props) {
+  return (
+    <section className="currentWord">
+      <span>{props.word}</span>
+    </section>
+  );
 }
 
 export default CurrentWord;

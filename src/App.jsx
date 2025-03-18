@@ -3,8 +3,11 @@ import Information from "./components/Information/Information";
 import HangmanStatus from "./components/HangmanStatus/HangmanStatus";
 import CurrentWord from "./components/CurrentWord/CurrentWord";
 import Keyboard from "./components/Keyboard/Keyboard";
+import { useState } from "react";
 
 function App() {
+  const [displayCurrentWord, setDisplayCurrentWord] = useState("TestWord");
+
   return (
     <main>
       <section className="information-section">
@@ -16,7 +19,7 @@ function App() {
       </section>
 
       <section>
-        <CurrentWord />
+        <CurrentWord word={displayCurrentWord} />
       </section>
 
       <section>
