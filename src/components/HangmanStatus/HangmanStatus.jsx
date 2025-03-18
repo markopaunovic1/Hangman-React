@@ -13,11 +13,7 @@ function HangmanStatus() {
 
   return (
     <section>
-      <img
-        key={currentImageIndex}
-        src={images[currentImageIndex]}
-        alt="hangman"
-      ></img>
+      <img key={images} src={images[currentImageIndex]} alt="hangman"></img>
       <button onClick={showNextImage}>click for roll image</button>
     </section>
   );
