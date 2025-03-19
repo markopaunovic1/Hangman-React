@@ -1,11 +1,6 @@
-section.currentWord {
+section.currentWord > span {
   display: flex;
   justify-content: center;
-  gap: 20px;
-}
-
-section.currentWord > span {
-  height: 50px;
-  width: 50px;
-  background-color: red;
+  text-align: center;
+  gap: 6px;
 }

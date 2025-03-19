@@ -8,6 +8,16 @@ import { useState } from "react";
 function App() {
   const [displayCurrentWord, setDisplayCurrentWord] = useState("TestWord");
 
+  const letterElements = displayCurrentWord
+    .split("")
+    .map((eachLetter, index) => {
+      return (
+        <span key={index} className="eachLetterElements">
+          {eachLetter.toUpperCase()}
+        </span>
+      );
+    });
+
   return (
     <main>
       <section className="information-section">
@@ -18,8 +28,8 @@ function App() {
         <HangmanStatus />
       </section>
 
-      <section>
-        <CurrentWord word={displayCurrentWord} />
+      <section className="currentWord">
+        <CurrentWord word={letterElements} />
       </section>
 
       <section>

@@ -30,3 +30,13 @@ section.information-section {
   text-align: center;
   font-size: 34px;
 }
+
+span.eachLetterElements {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: end;
+  border-bottom: 2px solid #6272a4;
+  font-size: 36px;
+}
