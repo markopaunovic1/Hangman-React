@@ -1,9 +1,18 @@
-import React from "react"
+import React from "react";
+import "./index.css";
 
 function Keyboard() {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  const displayKeyboard = alphabet.split("").map((eachKey, index) => {
     return (
-        <h1>Keyboard section</h1>
-    )
+      <button key={index} className="eachKey">
+        {eachKey.toUpperCase()}
+      </button>
+    );
+  });
+
+  return <span className="keyboardElements">{displayKeyboard}</span>;
 }
 
 export default Keyboard;

@@ -3,4 +3,5 @@ section.currentWord > span {
   justify-content: center;
   text-align: center;
   gap: 6px;
+  margin-bottom: 50px;
 }

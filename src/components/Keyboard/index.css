@@ -1,0 +1,21 @@
+span.keyboardElements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 650px;
+  margin-bottom: 90px;
+}
+
+button.eachKey {
+  background-color: #6272a4;
+  color: #f8f8f2;
+  border: none;
+  font-size: 30px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-family: "Patrick Hand", cursive;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
