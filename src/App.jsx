@@ -7,14 +7,15 @@ import { useState } from "react";
 
 function App() {
   // useState() hooks
-  const [displayCurrentWord, setDisplayCurrentWord] = useState("TestWord");
+  const [displayCurrentWord, setDisplayCurrentWord] = useState("testword");
+  const [guessedLetters, setGuessedLetters] = useState([]);
 
   const letterElements = displayCurrentWord
     .split("")
     .map((eachLetter, index) => {
       return (
         <span key={index} className="eachLetterElements">
-          {eachLetter.toUpperCase()}
+          {guessedLetters.includes(eachLetter) ? eachLetter.toUpperCase() : ""}
         </span>
       );
     });
@@ -34,7 +35,11 @@ function App() {
       </section>
 
       <section>
-        <Keyboard />
+        <Keyboard
+          guessedLetters={guessedLetters}
+          setGuessedLetters={setGuessedLetters}
+          displayCurrentWord={displayCurrentWord}
+        />
       </section>
 
       <section>

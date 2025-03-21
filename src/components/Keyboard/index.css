@@ -7,7 +7,7 @@ span.keyboardElements {
   margin-bottom: 90px;
 }
 
-button.eachKey {
+.eachKey {
   background-color: #6272a4;
   color: #f8f8f2;
   border: none;
@@ -21,9 +21,9 @@ button.eachKey {
 }
 
 .correct {
-  background-color: green;
+  background-color: #31b653;
 }
 
 .incorrect {
-  background-color: red;
+  background-color: #ba3c3c;
 }
