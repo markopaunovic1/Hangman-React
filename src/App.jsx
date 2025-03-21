@@ -6,6 +6,7 @@ import Keyboard from "./components/Keyboard/Keyboard";
 import { useState } from "react";
 
 function App() {
+  // useState() hooks
   const [displayCurrentWord, setDisplayCurrentWord] = useState("TestWord");
 
   const letterElements = displayCurrentWord
@@ -24,7 +25,7 @@ function App() {
         <Information />
       </section>
 
-      <section>
+      <section className="hangmanStatus">
         <HangmanStatus />
       </section>
 

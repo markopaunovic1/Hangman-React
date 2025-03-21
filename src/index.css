@@ -31,11 +31,16 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  max-height: 200px;
 }
 
 section.information-section {
   text-align: center;
   font-size: 34px;
+}
+
+section.hangmanStatus {
+  min-height: 400px;
 }
 
 span.eachLetterElements {

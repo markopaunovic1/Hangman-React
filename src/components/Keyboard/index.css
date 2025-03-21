@@ -19,3 +19,11 @@ button.eachKey {
   width: 50px;
   cursor: pointer;
 }
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
