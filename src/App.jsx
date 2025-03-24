@@ -27,7 +27,10 @@ function App() {
       </section>
 
       <section className="hangmanStatus">
-        <HangmanStatus />
+        <HangmanStatus
+          guessedLetters={guessedLetters}
+          currentWord={displayCurrentWord}
+        />
       </section>
 
       <section className="currentWord">
