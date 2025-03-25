@@ -3,7 +3,7 @@ import images from "../../images";
 
 function HangmanStatus({ guessedLetters, currentWord }) {
   const [hangmanImages, setHangmanImages] = useState(images);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(-1);
 
   // Show the next image
   const showNextImage = () => {
@@ -23,11 +23,12 @@ function HangmanStatus({ guessedLetters, currentWord }) {
 
   return (
     <section>
-      <img
-        key={wrongGuessCount && hangmanImages[currentImageIndex]}
-        src={wrongGuessCount && hangmanImages[currentImageIndex]}
-        alt="hangman"
-      ></img>
+      {currentImageIndex >= 0 && (
+        <img
+          key={wrongGuessCount && hangmanImages[currentImageIndex]}
+          src={wrongGuessCount && hangmanImages[currentImageIndex]}
+        ></img>
+      )}
     </section>
   );
 }
