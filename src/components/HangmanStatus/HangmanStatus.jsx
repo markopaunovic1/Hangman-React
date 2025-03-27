@@ -4,6 +4,7 @@ import images from "../../images";
 function HangmanStatus({ guessedLetters, currentWord }) {
   const [hangmanImages, setHangmanImages] = useState(images);
   const [currentImageIndex, setCurrentImageIndex] = useState(-1);
+  const [attempts, setAttempts] = useState(8);
 
   // Show the next image
   const showNextImage = () => {
@@ -16,10 +17,14 @@ function HangmanStatus({ guessedLetters, currentWord }) {
   ).length;
 
   if (wrongGuessCount - 1 > currentImageIndex) {
+    if (wrongGuessCount) {
+      setAttempts(attempts - 1);
+    }
     showNextImage();
   }
 
   console.log(currentImageIndex);
+  console.log("atempts left: " + attempts);
 
   return (
     <section>

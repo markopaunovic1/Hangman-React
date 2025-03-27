@@ -3,12 +3,13 @@ import Information from "./components/Information/Information";
 import HangmanStatus from "./components/HangmanStatus/HangmanStatus";
 import CurrentWord from "./components/CurrentWord/CurrentWord";
 import Keyboard from "./components/Keyboard/Keyboard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   // useState() hooks
   const [displayCurrentWord, setDisplayCurrentWord] = useState("testword");
   const [guessedLetters, setGuessedLetters] = useState([]);
+  const [attempts, setAttempts] = useState(8);
 
   const letterElements = displayCurrentWord
     .split("")
@@ -19,6 +20,18 @@ function App() {
         </span>
       );
     });
+
+  const attemptsLeft = guessedLetters.filter(
+    (letter) => !displayCurrentWord.includes(letter)
+  ).length;
+
+  useEffect(() => {
+    if (attemptsLeft) {
+      setAttempts((prevAttempts) => prevAttempts - 1);
+    }
+  }, [guessedLetters, displayCurrentWord]);
+
+  console.log("attempts from APP: " + attempts);
 
   return (
     <main>
@@ -34,6 +47,7 @@ function App() {
       </section>
 
       <section className="currentWord">
+        <p>Attempts: {attempts}</p>
         <CurrentWord word={letterElements} />
       </section>
 
