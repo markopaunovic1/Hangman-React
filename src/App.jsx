@@ -11,6 +11,16 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [attempts, setAttempts] = useState(8);
 
+  const attemptsLeft = guessedLetters.filter(
+    (letter) => !displayCurrentWord.includes(letter)
+  ).length;
+
+  useEffect(() => {
+    if (attemptsLeft) {
+      setAttempts((prevAttempts) => prevAttempts - 1);
+    }
+  }, [attemptsLeft]);
+
   const letterElements = displayCurrentWord
     .split("")
     .map((eachLetter, index) => {
@@ -20,18 +30,6 @@ function App() {
         </span>
       );
     });
-
-  const attemptsLeft = guessedLetters.filter(
-    (letter) => !displayCurrentWord.includes(letter)
-  ).length;
-
-  useEffect(() => {
-    if (attemptsLeft) {
-      setAttempts((prevAttempts) => prevAttempts - 1);
-    }
-  }, [guessedLetters, displayCurrentWord]);
-
-  console.log("attempts from APP: " + attempts);
 
   return (
     <main>
