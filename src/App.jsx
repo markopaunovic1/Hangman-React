@@ -4,6 +4,7 @@ import HangmanStatus from "./components/HangmanStatus/HangmanStatus";
 import CurrentWord from "./components/CurrentWord/CurrentWord";
 import Keyboard from "./components/Keyboard/Keyboard";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 function App() {
   // useState() hooks
@@ -31,6 +32,8 @@ function App() {
       );
     });
 
+  const styleAttempts = { clsx: attemptsLeft < 3 ? ".attempts" : "" };
+
   return (
     <main>
       <section className="information-section">
@@ -45,7 +48,7 @@ function App() {
       </section>
 
       <section className="currentWord">
-        <p>Attempts: {attempts}</p>
+        <p className={styleAttempts}>Attempts: {attempts}</p>
         <CurrentWord word={letterElements} />
       </section>
 
