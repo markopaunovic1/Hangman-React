@@ -32,7 +32,10 @@ function App() {
       );
     });
 
-  const styleAttempts = { clsx: attemptsLeft < 3 ? ".attempts" : "" };
+  const styleAttempts = clsx({
+    attempts: attempts,
+    attemptsLow: attempts < 4,
+  });
 
   return (
     <main>

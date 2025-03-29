@@ -63,6 +63,10 @@ section.hangmanStatus {
 
 .attempts {
   font-size: 20px;
+}
+
+.attemptsLow {
+  font-size: 20px;
   animation: blink 0.2s;
   animation-iteration-count: 3;
   color: #e63946;
