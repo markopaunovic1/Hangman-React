@@ -14,9 +14,6 @@ function Keyboard({ guessedLetters, setGuessedLetters, displayCurrentWord }) {
     );
   }
 
-  console.log(guessedLetters);
-  console.log(displayCurrentWord + "displayCurrentWord");
-
   const displayKeyboard = alphabet.split("").map((eachKey, index) => {
     const isGuessed = guessedLetters.includes(eachKey);
     const isCorrect = isGuessed && displayCurrentWord.includes(eachKey);

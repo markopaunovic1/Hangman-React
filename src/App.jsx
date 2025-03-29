@@ -12,6 +12,13 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [attempts, setAttempts] = useState(8);
 
+  // check if the game is won or lost
+  const isGameWon = displayCurrentWord
+    .split("")
+    .every((letter) => guessedLetters.includes(letter));
+  const isGameLost = attempts === 0;
+  const isGameOver = isGameWon || isGameLost;
+
   const attemptsLeft = guessedLetters.filter(
     (letter) => !displayCurrentWord.includes(letter)
   ).length;
@@ -50,8 +57,10 @@ function App() {
         />
       </section>
 
-      <section className="currentWord">
-        <p className={styleAttempts}>Attempts: {attempts}</p>
+      <section>
+        {guessedLetters.length > 0 && (
+          <p className={styleAttempts}>Attempts: {attempts}</p>
+        )}
         <CurrentWord word={letterElements} />
       </section>
 
@@ -64,7 +73,7 @@ function App() {
       </section>
 
       <section>
-        <button className="newGameButton">New Game</button>
+        {isGameOver && <button className="newGameButton">New Game</button>}
       </section>
     </main>
   );

@@ -28,10 +28,6 @@ Buttons/UI Elements: Blue (#1976d2)
   100% {
     opacity: 1;
   }
-
-  50% {
-    opacity: 0;
-  }
 }
 
 body {
@@ -58,7 +54,7 @@ section.information-section {
 }
 
 section.hangmanStatus {
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .attempts {
