@@ -12,13 +12,14 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [attempts, setAttempts] = useState(8);
 
-  // check if the game is won or lost
+  // Derived values
   const isGameWon = displayCurrentWord
     .split("")
     .every((letter) => guessedLetters.includes(letter));
   const isGameLost = attempts === 0;
   const isGameOver = isGameWon || isGameLost;
 
+  // Attempts left
   const attemptsLeft = guessedLetters.filter(
     (letter) => !displayCurrentWord.includes(letter)
   ).length;
@@ -29,12 +30,16 @@ function App() {
     }
   }, [attemptsLeft]);
 
+  // Display the current word
   const letterElements = displayCurrentWord
     .split("")
     .map((eachLetter, index) => {
+      const showMissingLetter =
+        isGameLost || guessedLetters.includes(eachLetter);
+
       return (
         <span key={index} className="eachLetterElements">
-          {guessedLetters.includes(eachLetter) ? eachLetter.toUpperCase() : ""}
+          {showMissingLetter ? eachLetter.toUpperCase() : ""}
         </span>
       );
     });
@@ -58,10 +63,12 @@ function App() {
       </section>
 
       <section>
-        {guessedLetters.length > 0 && (
-          <p className={styleAttempts}>Attempts: {attempts}</p>
-        )}
-        <CurrentWord word={letterElements} />
+        <p className={styleAttempts}>Attempts: {attempts}</p>
+        <CurrentWord
+          word={letterElements}
+          guessedLetters={guessedLetters}
+          displayCurrentWord={displayCurrentWord}
+        />
       </section>
 
       <section>
