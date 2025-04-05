@@ -4,11 +4,12 @@ import HangmanStatus from "./components/HangmanStatus/HangmanStatus";
 import CurrentWord from "./components/CurrentWord/CurrentWord";
 import Keyboard from "./components/Keyboard/Keyboard";
 import { useEffect, useState } from "react";
+import getRandomWord from "./randomWords";
 import clsx from "clsx";
 
 function App() {
   // useState() hooks
-  const [displayCurrentWord, setDisplayCurrentWord] = useState("testword");
+  const [displayCurrentWord, setDisplayCurrentWord] = useState(getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [attempts, setAttempts] = useState(8);
 
