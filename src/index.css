@@ -78,6 +78,14 @@ span.eachLetterElements {
   font-size: 36px;
 }
 
+.colorMissingLetter {
+  color: #ff5555;
+}
+
+.colorCorrectLetter {
+  color: #50fa7b;
+}
+
 .newGameButton {
   width: 200px;
   height: 50px;

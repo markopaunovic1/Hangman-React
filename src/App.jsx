@@ -9,7 +9,7 @@ import clsx from "clsx";
 
 function App() {
   // useState() hooks
-  const [displayCurrentWord, setDisplayCurrentWord] = useState(getRandomWord());
+  const [displayCurrentWord, setDisplayCurrentWord] = useState("testword");
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [attempts, setAttempts] = useState(8);
 
@@ -38,8 +38,14 @@ function App() {
       const showMissingLetter =
         isGameLost || guessedLetters.includes(eachLetter);
 
+      const styleLetter = clsx({
+        eachLetterElements: true,
+        colorMissingLetter: isGameLost && !guessedLetters.includes(eachLetter),
+        colorCorrectLetter: isGameWon,
+      });
+
       return (
-        <span key={index} className="eachLetterElements">
+        <span key={index} className={styleLetter}>
           {showMissingLetter ? eachLetter.toUpperCase() : ""}
         </span>
       );
@@ -63,13 +69,9 @@ function App() {
         />
       </section>
 
-      <section>
+      <section className="currentWord">
         <p className={styleAttempts}>Attempts: {attempts}</p>
-        <CurrentWord
-          word={letterElements}
-          guessedLetters={guessedLetters}
-          displayCurrentWord={displayCurrentWord}
-        />
+        <CurrentWord word={letterElements} />
       </section>
 
       <section>
